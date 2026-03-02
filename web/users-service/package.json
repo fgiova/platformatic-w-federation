@@ -1,0 +1,15 @@
+{
+  "name": "users-service",
+  "version": "1.0.0",
+  "private": true,
+  "main": "index.js",
+  "type": "module",
+  "dependencies": {
+    "fastify": "^5.0.0",
+    "@mercuriusjs/federation": "^5.0.0"
+  },
+  "devDependencies": {
+    "@platformatic/tsconfig": "^0.1.0",
+    "@types/node": "^22.0.0"
+  }
+}

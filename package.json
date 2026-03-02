@@ -1,0 +1,17 @@
+{
+  "name": "platformatic-w-federation",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wattpm dev",
+    "build": "platformatic build"
+  },
+  "dependencies": {
+    "@platformatic/gateway": "^3.39.0",
+    "@platformatic/node": "^3.39.0",
+    "@platformatic/runtime": "^3.39.0",
+    "dotenv": "^17.2.3",
+    "platformatic": "^3.39.0",
+    "wattpm": "latest"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "public-gateway",
+  "scripts": {
+    "dev": "wattpm dev",
+    "start": "wattpm start",
+    "build": "wattpm build",
+    "test": "node --test"
+  },
+  "devDependencies": {
+    "fastify": "^5.0.0",
+    "typescript": "^5.5.4"
+  },
+  "dependencies": {
+    "@fastify/static": "^9.0.0",
+    "@platformatic/globals": "^3.27.0",
+    "@mercuriusjs/gateway": "^5.0.0",
+    "@platformatic/gateway": "^3.29.1",
+    "altair-fastify-plugin": "^8.4.1",
+    "undici": "^7.0.0"
+  },
+  "engines": {
+    "node": ">=22.19.0"
+  }
+}

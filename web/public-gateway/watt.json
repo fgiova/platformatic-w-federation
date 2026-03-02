@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schemas.platformatic.dev/@platformatic/gateway/3.29.1.json",
+  "watch": true,
+
+  "gateway": {
+    "applications": [
+      {
+        "id": "users-service",
+        "proxy": false
+      },
+      {
+        "id": "posts-service",
+        "proxy": false
+      },
+      {
+        "id": "reviews-service",
+        "proxy": false
+      }
+    ]
+  },
+
+  "plugins": {
+    "paths": [
+      "./plugins/graphql.ts"
+    ]
+  }
+}
