@@ -49,8 +49,8 @@ importers:
         specifier: ^9.0.0
         version: 9.0.0
       '@mercuriusjs/gateway':
-        specifier: ^5.0.0
-        version: 5.1.0(@fastify/websocket@11.2.0)
+        specifier: github:fgiova/mercurius-gateway#feature/add-always-origin-to-requests
+        version: https://codeload.github.com/fgiova/mercurius-gateway/tar.gz/7c5d9a16f4b15854f71e22e250ac7751766a794d(@fastify/websocket@11.2.0)
       '@platformatic/gateway':
         specifier: ^3.29.1
         version: 3.39.0(typescript@5.9.3)
@@ -225,8 +225,9 @@ packages:
   '@mercuriusjs/federation@5.0.0':
     resolution: {integrity: sha512-5E2S3mgxq+yK4XZm0UMms3lcG3QG/83xh8mmo/XyjwQiT8DulX8ibBXvlQtmOO4g4U9N+AUEqrqPfnoC5I+TSA==}
 
-  '@mercuriusjs/gateway@5.1.0':
-    resolution: {integrity: sha512-PS5+aQnEhW5FHWkLBr5xG+zPOcEeTe8LYt+xzfq5Omxuln95S8IFE5Hb2gdFXdOE/hY5C13j/y3u6vx7Q3cJOg==}
+  '@mercuriusjs/gateway@https://codeload.github.com/fgiova/mercurius-gateway/tar.gz/7c5d9a16f4b15854f71e22e250ac7751766a794d':
+    resolution: {tarball: https://codeload.github.com/fgiova/mercurius-gateway/tar.gz/7c5d9a16f4b15854f71e22e250ac7751766a794d}
+    version: 5.1.0
 
   '@mercuriusjs/subscription-client@2.0.0':
     resolution: {integrity: sha512-rjYVWfFa0Z6L1OjQ3akp5RrFZ2dnlgF+sfnZ7AjGJgj5vrIvv/S4UFYIWmdrRjVaxJwPvBLJVHiY0fDqnFjWEQ==}
@@ -1929,7 +1930,7 @@ snapshots:
       - bufferutil
       - utf-8-validate
 
-  '@mercuriusjs/gateway@5.1.0(@fastify/websocket@11.2.0)':
+  '@mercuriusjs/gateway@https://codeload.github.com/fgiova/mercurius-gateway/tar.gz/7c5d9a16f4b15854f71e22e250ac7751766a794d(@fastify/websocket@11.2.0)':
     dependencies:
       '@mercuriusjs/federation': 5.0.0
       '@mercuriusjs/subscription-client': 2.0.0(graphql@16.13.0)

@@ -1,11 +1,11 @@
 import type { IncomingHttpHeaders } from "node:http";
-import mercuriusWithGateway from "@mercuriusjs/gateway";
+import mercuriusWithGateway, {type MercuriusGatewayService} from "@mercuriusjs/gateway";
 import type { FastifyInstance } from "fastify";
-import { Pool, request as undiciRequest } from "undici";
+import { Pool, request as undiciRequest, getGlobalDispatcher, Agent } from "undici";
 
 
 export default async function (fastify: FastifyInstance) {
-	const graphqlEndpoints = [];
+	const graphqlEndpoints: MercuriusGatewayService[] = [] ;
 	const endpoints = [
 		{
 			id: "users-service",
@@ -53,24 +53,7 @@ export default async function (fastify: FastifyInstance) {
 
 		graphqlEndpoints.push({
 			...serviceGw,
-			agent: new Proxy(new Pool(url.origin, defaultPoolOptions), {
-				get: (target, key) => {
-					if (key === "request" && url.host.endsWith(".plt.local")) {
-						// biome-ignore lint/suspicious/noExplicitAny: Necessary for override
-						return (opts: any) => {
-							const urlString = `${url.origin}${opts.path}`;
-							return undiciRequest(urlString, {
-								method: opts.method,
-								headers: opts.headers,
-								body: opts.body,
-								...defaultPoolOptions,
-							});
-						};
-					}
-					// biome-ignore lint/suspicious/noExplicitAny: Necessary for override
-					return (target as any)[key];
-				},
-			}),
+			agent: getGlobalDispatcher(),
 			mandatory: true,
 		});
 	}
